@@ -29,7 +29,7 @@ export default function App() {
   const [players,setPlayers] = useState([]);
   const [status,setStatus] = useState("");
   const [isFirstGame,setIsFirstGame] = useState();
-  
+  const [isLoading,setIsLoading] = useState(true);
 
   useEffect(()=>{
     
@@ -39,20 +39,24 @@ export default function App() {
       if(session_id === null)
         localStorage.setItem("session_id", "-1");
 
+      try{
 
-      const response = await fetchHistory(localStorage.getItem("session_id"));
-      
-        
-      if(response){
-        if(response.game_history.length > 0){
-          setHistory(response.game_history);
-          setIsFirstGame(false);
-          setActiveGame(response.game_history.length-1);
+        const response = await fetchHistory(localStorage.getItem("session_id"));  
+        if(response){
+          if(response.game_history.length > 0){
+            setHistory(response.game_history);
+            setIsFirstGame(false);
+            setActiveGame(response.game_history.length-1);
+          }
+          else{
+            setIsFirstGame(true);
+          }
+          //console.log(response);
         }
-        else{
-          setIsFirstGame(true);
-        }
-        //console.log(response);
+      }catch(error){
+        console.log("error fetching data", error);
+      }finally{
+        setIsLoading(false);
       }
     }
 
@@ -60,15 +64,11 @@ export default function App() {
     
   },[]);
 
-  useEffect(()=>{
-    location.reload();
-  },[isFirstGame])
-
   return (
     <>
       
       <div className="container">
-        {isFirstGame === undefined? <p style="color:white">Fetching data...</p>:
+        {isLoading ? <p style={{ color: "white" }}>Fetching data...</p>:
         <>
         <header>
           <Navbar setPlayerName={setPlayers} history={history} setHistory={setHistory} isFirstGame={isFirstGame} setIsFirstGame={setIsFirstGame} setActiveGame={setActiveGame} />
