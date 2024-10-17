@@ -60,12 +60,15 @@ export default function App() {
     
   },[]);
 
+  useEffect(()=>{
+    location.reload();
+  },[isFirstGame])
 
   return (
     <>
       
       <div className="container">
-        {isFirstGame === undefined? <p>Feching data...</p>:
+        {isFirstGame === undefined? <p style="color:white">Fetching data...</p>:
         <>
         <header>
           <Navbar setPlayerName={setPlayers} history={history} setHistory={setHistory} isFirstGame={isFirstGame} setIsFirstGame={setIsFirstGame} setActiveGame={setActiveGame} />
