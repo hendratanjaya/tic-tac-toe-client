@@ -21,7 +21,7 @@ learn so many new things, I tried to using components and state to this project 
 This project is linked with a [back-end server](https://github.com/hendratanjaya/tic-tac-toe-server) that I developed using Node.js and Express. The server handles game data management, player sessions, and game history, allowing seamless communication between the front-end and back-end. With this architecture, players can enjoy a persistent gameplay experience, where their game history is saved and retrieved dynamically from the server.
 
 Player data is stored in an external database using Vercel Storage(postgresSql), This project simulates standard API request handling, providing a typical experience of interacting with RESTful APIs for data retrieval and updates. Each user will be given an API key, this API Key will be stored in web local storage, and this API Key will be used as an identifier to the server preventing other user to freelyaccessing someone else's data                                                                     
-(i hope..). Well at least thats what I have in mind. 
+(i hope..). Well at least thats what I have in mind. I recommend you to only open this web on dekstop, it will not look great on mobile app. 
 
 Overall, [this project](https://hendratanjaya.github.io/tic-tac-toe-client/) is FUN!
 
