@@ -34,7 +34,7 @@ export default function Modal({status, close,setPlayerName,history,setHistory,is
                 }
                 }
             )
-            console.log(newHistory);
+            //console.log(newHistory);
             addNewGame(newHistory);
             setActiveGame(newHistory.length-1);
             setHistory(newHistory);
@@ -42,7 +42,7 @@ export default function Modal({status, close,setPlayerName,history,setHistory,is
         }
         //setActiveGame(history.length-1);
         
-        location.reload();
+        //location.reload();
         close();
 
     }
