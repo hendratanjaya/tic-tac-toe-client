@@ -44,14 +44,15 @@ export default function App() {
       
         
       if(response){
-        if(response.data.history.length > 0){
-          setHistory(response.data.history);
+        if(response.game_history.length > 0){
+          setHistory(response.game_history);
           setIsFirstGame(false);
-          setActiveGame(response.data.history.length-1);
+          setActiveGame(response.game_history.length-1);
         }
         else{
           setIsFirstGame(true);
         }
+        //console.log(response);
       }
     }
 
