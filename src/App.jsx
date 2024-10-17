@@ -28,7 +28,7 @@ export default function App() {
   const [activeGame,setActiveGame] = useState(0);
   const [players,setPlayers] = useState([]);
   const [status,setStatus] = useState("");
-  const [isFirstGame,setIsFirstGame] = useState();
+  const [isFirstGame,setIsFirstGame] = useState(true);
   const [isLoading,setIsLoading] = useState(true);
 
   useEffect(()=>{
