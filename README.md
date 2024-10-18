@@ -25,4 +25,6 @@ Player data is stored in an external database using Vercel Storage(postgresSql),
 
 Overall, [this project](https://hendratanjaya.github.io/tic-tac-toe-client/) is FUN!
 
+If the link is broken, check out the vide demonstration [here](https://drive.google.com/file/d/1OxtuQd5m3MLCz3Xy9lwWC50B-FnYbAkC/view?usp=sharing)
+
 thank you~
